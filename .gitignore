@@ -163,7 +163,7 @@ Temporary Items
 
 ## Sensitive ##
 **/[Pp]rivate/
-.env
+*.env
 .env.development.local
 .env.test.local
 .env.production.local
