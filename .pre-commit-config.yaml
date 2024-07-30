@@ -1,0 +1,40 @@
+#
+# Frostpeak Studios
+#
+# Default pre-commit configuration. Use this for all projects to ensure consistency.
+# Modify as necessary for specific projects/languages.
+#
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v4.6.0
+    hooks:
+      # File size
+      - id: check-large-files
+        args: [--maxkb=100000]
+      # File naming
+      - id: check-case-conflict
+      - id: check-illegal-windows-names
+      # File formatting
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: pretty-format-json --autofix
+      # Shell scripts
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      # Syntax validation
+      - id: check-json
+      - id: check-yaml
+      # Secret detection
+      - id: detect-private-key
+      # Branch protection
+      - id: no-commit-to-branch
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict]

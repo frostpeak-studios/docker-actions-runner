@@ -1,0 +1,18 @@
+#
+# Frostpeak Studios
+#
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{c,class,cpp,cs,go,h,js,jslib,jspre,json,kt,m,mm,php,py,rs,swift,ts}]
+indent_size = 4
+
+[*.{css,hcl,htm,html,lua,rb,sass,scss,sh,sql,tf,tfvars,xaml,xml,yml,yaml}]
+indent_size = 2
