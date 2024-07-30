@@ -1,0 +1,15 @@
+services:
+  runner:
+    image: ghcr.io/frostpeak-studios/docker-actions-runner:latest
+    restart: always
+    env_file: "runner.env"
+    deploy:
+      mode: replicated
+      replicas: 4
+      resources:
+        limits:
+          cpus: '0.35'
+          memory: 300M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
